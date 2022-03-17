@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=69.420.1337
+Type=Application
+Terminal=true
+Exec=gnome-terminal --geometry=60x49+0+0 -e /home/devraza/Projects/gotop
+Name=gotop
+Icon=htop
