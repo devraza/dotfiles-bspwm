@@ -1,0 +1,22 @@
+[global]
+frame_color = "#DDB6F2"
+separator_color = frame
+icon_name = Papirus
+
+[urgency_low]
+timeout = 2
+background = "#1E1E2E"
+foreground = "#D9E0EE"
+frame_color = "#DDB6F2"
+
+[urgency_normal]
+timeout = 5
+background = "#1E1E2E"
+foreground = "#D9E0EE"
+frame_color = "#DDB6F2"
+
+[urgency_critical]
+timeout = 0
+background = "#1E1E2E"
+foreground = "#D9E0EE"
+frame_color = "#F28FAD"
