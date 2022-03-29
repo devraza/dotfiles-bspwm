@@ -1,18 +1,18 @@
 configuration{
     modi: "run,drun,window";
     lines: 5;
-    font: "Cantarell Regular 14";
+    font: "JetBrainsMono Nerd Font 12";
     show-icons: true;
     icon-theme: "Papirus";
-    terminal: "st";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: " Apps ";
-    display-run: " Run ";
-    display-window: " Windows ";
-    display-Network: " Network";
+    display-drun: "  ";
+    display-run: "  ";
+    display-window: " 﩯 ";
+    display-Network: " 󰤨";
     sidebar-mode: true;
 }
 
@@ -21,12 +21,13 @@ configuration{
 element-text, element-icon , mode-switcher {
     background-color: inherit;
     text-color:       inherit;
+    size: 2.4ch;
 }
 
 window {
-    border-radius: 0px;
+    width: 800px;
     height: 800px;
-    border: 3px;
+    border: 5px;
     border-color: @border-col;
     background-color: @bg-col;
 }
@@ -38,8 +39,8 @@ mainbox {
 inputbar {
     children: [prompt,entry];
     background-color: @bg-col;
-    border-radius: 20px;
-    padding: 5px;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 prompt {
