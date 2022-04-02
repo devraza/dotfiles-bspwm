@@ -25,4 +25,4 @@ Important applications are listed as follows, as well as their purpose:
 An [install script](https://github.com/devraza/dotfiles/blob/main/install.sh) is in this repository if you want to install everything.
 (However, it only works on Arch Linux with a yay install)
 
-![Screenshot of rice](https://github.com/devraza/dotfiles/blob/main/screenshot.png)](https://github.com/devraza/dotfiles/blob/main/install.sh)
+![Screenshot](https://github.com/devraza/dotfiles/blob/main/screenshot.png)
