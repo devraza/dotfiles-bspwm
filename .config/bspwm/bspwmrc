@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-export PATH="${PATH}:$HOME/.config/bspwm/bin"
+#!/usr/bin/zsh
 
 xrdb ~/.Xresources
 getcolors() {
@@ -30,7 +28,7 @@ bspc config border_width 4
 bspc config window_gap 16
 bspc config split_ratio 0.50
 
-# Fixes resizing error
+# Fixes resizing bug
 bspc config pointer_motion_interval 40
 
 bspc config focused_border_color "$MAGENTA" 
@@ -67,8 +65,8 @@ for i in ${media[@]}; do
 # 6 > music
 bspc rule -a spotify desktop='^6' follow=on focus=on; done
 
+# Relaunch applications
 killall polybar dunst sxhkd
 polybar &
 sxhkd &
 dunst &
-
