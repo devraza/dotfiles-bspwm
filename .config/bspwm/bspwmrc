@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+export PATH="${PATH}:$HOME/.config/bspwm/bin"
+
+xrdb ~/.Xresources
+getcolors() {
+	FOREGROUND=#D9E0EE
+	BACKGROUND=#7E7E9E
+	BLACK=#161320
+	RED=#F28FAD
+	GREEN=#ABE9B3
+	YELLOW=#FAE3B0
+	BLUE=#96CDFB
+	MAGENTA=#DDB6F2
+	CYAN=#B5E8E0
+	WHITE=#D9E0EE
+}
+getcolors
+
+workspaces() {
+	name=1
+	for monitor in `bspc query -M`; do
+		bspc monitor ${monitor} -n "$name" -d 'terminal' 'browser' 'micro' 'chat' 'media' 'I' 'II' 'III'
+		let name++
+	done
+}
+workspaces
+
+bspc config border_width 4
+bspc config window_gap 16
+bspc config split_ratio 0.50
+
+# Fixes resizing error
+bspc config pointer_motion_interval 40
+
+bspc config focused_border_color "$MAGENTA" 
+bspc config normal_border_color "$BACKGROUND"
+bspc config active_border_color "$BLUE"
+bspc config presel_feedback_color "$GREEN"
+
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config paddingless_monocle true
+bspc config single_monocle false
+bspc config focus_follows_pointer true
+
+# Remove all rules
+bspc -rule -r *:*
+
+# 1 - terminal (kitty)
+bspc rule -a kitty desktop='^1' follow=on focus=on
+
+# 2 - browser (brave)
+bspc rule -a brave-browser desktop='^2' follow=on focus=on
+
+# 3 - code (micro)
+bspc rule -a micro desktop='^3' follow=on focus=on
+
+# 4 - discord
+bspc rule -a DiscordCanary desktop='^4' follow=on focus=on
+
+# 5 - media
+declare -a media=(mpv Zathura feh)
+for i in ${media[@]}; do
+   bspc rule -a $i desktop='^5' follow=on focus=on; done
+
+# 6 > music
+bspc rule -a spotify desktop='^6' follow=on focus=on; done
+
+killall polybar dunst sxhkd
+polybar &
+sxhkd &
+dunst &
+
