@@ -16,20 +16,42 @@ error_symbol = "[λ ](bold red)"
 [package]
 disabled = true
 
-# See battery status
+#-------- Battery  ##
 [battery]
-full_symbol = "⚡️ "
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
+full_symbol = " "
+charging_symbol = "  "
+discharging_symbol = " "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 20
+style = "bold yellow"
+discharging_symbol = "💦"
 
 
 #-------- Git configuration ##
 
 [git_branch]
-symbol = "🌱 "
+symbol = " "
 truncation_length = 4
 truncation_symbol = ""
 
 [git_commit]
 commit_hash_length = 4
-tag_symbol = "🔖 "
+tag_symbol = " "
+
+[git_status]
+conflicted = ""
+ahead = ""
+behind = ""
+diverged = ""
+up_to_date = ""
+untracked = ""
+stashed = ""
+modified = ""
+staged = '[+\($count\)](green)'
+renamed = ""
+deleted = ""
