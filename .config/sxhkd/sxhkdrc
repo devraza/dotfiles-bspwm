@@ -1,0 +1,123 @@
+## --------- Terminal Emulator ##
+
+# Terminal (kitty)
+super + Return
+	kitty
+
+# Terminal (floating)
+super + shift + Return
+	kitty -f
+
+# Terminal (fullscreen)
+super + t
+	kitty -s	
+
+## --------- Screenshot ##
+
+# Select area, uses imagemagick
+super + shift + s
+	import ~/Pictures/screenshot.png && copyq write image/png - < ~/Pictures/screenshot.png && copyq select 0
+
+## --------- Wallpaper Switch ##
+
+# Centered
+super + shift + {d,f,g}
+	feh --bg-center{ /home/devraza/wallpapers/alt.jpg, /home/devraza/wallpapers/shaded_landscape.png, /home/devraza/wallpapers/cat-waves.png}
+
+# Filled
+# super + shift + a
+#	 feh --bg-fill /home/devraza/wallpapers/dressupdarling.png
+
+## --------- Playerctl (Spotify) ##
+
+# Play/Pause
+super + shift + p
+	playerctl --player=spotify play-pause
+
+# Next song
+super + shift + o
+	playerctl --player=spotify next
+
+# Previous song
+super + shift + i
+	playerctl --player=spotify previous
+
+## --------- Rofi ##
+
+# Rofi App Launcher
+super + space
+	rofi -show drun -dpi 200
+
+# Rofi Command Runner
+super + shift + space
+	rofi -show run -dpi 200
+
+# Rofi Bluetooth Menu
+super + alt + space
+	rofi-bluetooth
+
+## --------- Applications ##
+
+# Launch Apps
+super + ctrl + {b,z,d,m,g,c}
+	{brave,zathura,discord-canary,mpv,kitty gotop,kitty cava}
+
+## --------- System ##
+
+# Brighness control
+super + shift + {Left,Right}
+	xbacklight{ -10, +10}
+	
+# Volume control
+alt + shift + {Left,Right}
+	pulseaudio-ctl{ down 10, up 10}
+
+## --------- bspwm ##
+
+# Close app
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# Kill window
+super + ctrl + c
+    xkill
+
+# Reload keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Quit/restart bspwm
+ctrl + shift + {q,r}
+	bspc {quit,wm -r}
+	
+# Split horizontal, vertical or cancel
+super + {h,v,q}
+	bspc node -p {east,south,cancel}
+
+# Preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# Fullscreen or Monocle
+super + f
+    bspc node -t "~"fullscreen
+
+# Toggle beetwen floating & tiled
+super + ctrl + space
+    bspc node -t "~"{floating,tiled}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to the next window, including floating windows
+alt + {_,shift + }Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+super + ctrl + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Send focused window to another workspace
+super + {_,shift + }{1-8}
+	bspc {desktop -f,node -d} '^{1-8}'

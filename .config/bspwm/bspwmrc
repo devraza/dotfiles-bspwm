@@ -52,7 +52,7 @@ bspc rule -a kitty desktop='^1' follow=on focus=on
 bspc rule -a brave-browser desktop='^2' follow=on focus=on
 
 # 3 - code (micro)
-bspc rule -a micro desktop='^3' follow=on focus=on
+bspc rule -a vscodium desktop='^3' follow=on focus=on
 
 # 4 - discord
 bspc rule -a DiscordCanary desktop='^4' follow=on focus=on
