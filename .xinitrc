@@ -8,7 +8,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # Merge system resources
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
-
 fi
 
 # System modmap
@@ -19,7 +18,6 @@ fi
 # Merge user resources
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
-
 fi
 
 # User modmap
@@ -34,6 +32,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Set keyboard map to 'gb'
+setxkbmap gb
+
 # Set cursor
 xsetroot -cursor_name left_ptr
 
@@ -45,12 +46,10 @@ sxhkd &
 picom &
 dunst &
 polybar &
-
-# Clipboard manager
 copyq &
 
 # Startup script
 zsh ~/.config/autostart/startup &
 
-# Set keyboard layout to 'uk' (a.k.a. gb)
-exec bspwm | setxkbmap gb
+# Start bspwm
+exec bspwm
