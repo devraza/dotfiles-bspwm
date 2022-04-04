@@ -1,15 +1,16 @@
 configuration{
-    modi: "run,drun";
-    lines: 5;
-    font: "DejaVu Sans Mono 11";
+    modi: "run,drun,ssh";
+    lines: 2;
+    font: "DejaVu Sans Mono 12.3";
     icon-theme: "Papirus";
     terminal: "kitty";
-    drun-display-format: "{name}";
+    drun-display-format: " {name} ";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
     display-drun: " Apps ";
     display-run: " Run ";
+    display-ssh: " SSH ";
     sidebar-mode: true;
 }
 
@@ -21,9 +22,9 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-	width: 1300px;
-    height: 800px;
-    border: 3px;
+	width: 1400px;
+    height: 600px;
+    border: 4px;
     border-color: @border-col;
     background-color: @bg-col;
 }
@@ -36,7 +37,7 @@ inputbar {
     children: [prompt,entry];
     background-color: @bg-col;
     border-radius: 0px;
-    padding: 2px;
+    padding: 0px;
 }
 
 prompt {
@@ -54,7 +55,7 @@ textbox-prompt-colon {
 
 entry {
     padding: 6px;
-    margin: 20px 0px 0px 10px;
+    margin: 20px 0px 0px 14px;
     text-color: @fg-col;
     background-color: @bg-col;
 }
@@ -62,19 +63,15 @@ entry {
 listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
-    margin: 10px 0px 0px 20px;
-    columns: 2;
+    margin: 12px 0px 0px 0px;
+    columns: 1;
     background-color: @bg-col;
 }
 
 element {
-    padding: 5px;
+    padding: 3px;
     background-color: @bg-col;
     text-color: @fg-col  ;
-}
-
-element-icon {
-    size: 25px;
 }
 
 element selected {
@@ -84,10 +81,10 @@ element selected {
 
 mode-switcher {
     spacing: 0;
-  }
+}
 
 button {
-    padding: 10px;
+    padding: 6px;
     background-color: @bg-col-light;
     text-color: @grey;
     vertical-align: 0.5; 

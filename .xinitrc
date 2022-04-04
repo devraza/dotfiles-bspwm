@@ -38,13 +38,16 @@ fi
 xsetroot -cursor_name left_ptr
 
 # Set wallpaper
-feh --bg-center ~/wallpapers/shaded_landscape.png
+feh --bg-center ~/Pictures/wallpapers/shaded_landscape.png
 
 # Launch applications
 sxhkd &
 picom &
 dunst &
 polybar &
+
+# Clipboard manager
+copyq &
 
 # Startup script
 zsh ~/.config/autostart/startup &

@@ -3,7 +3,7 @@
 xrdb ~/.Xresources
 getcolors() {
 	FOREGROUND=#D9E0EE
-	BACKGROUND=#7E7E9E
+	BACKGROUND=#1E1E2E
 	BLACK=#161320
 	RED=#F28FAD
 	GREEN=#ABE9B3
@@ -64,9 +64,3 @@ for i in ${media[@]}; do
 
 # 6 > music
 bspc rule -a spotify desktop='^6' follow=on focus=on; done
-
-# Relaunch applications
-killall polybar dunst sxhkd
-polybar &
-sxhkd &
-dunst &
