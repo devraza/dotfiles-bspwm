@@ -2,13 +2,14 @@
 ### Applications
 - **PDF Viewer:** `zathura`
 - **Text Editor:** `micro`
-- **Music Player:** `Spotify` with `spicetify`
+- **Music Player:** `mpd` (Server) with `ncmpcpp` (Client)
 - **Notification Daemon:** `dunst`
 - **Compositor:** `picom`
 - **Terminal Emulator:** `kitty`
 - **Shell:** `zsh` with `Oh My Zsh!`
 - **Prompt:** `starship`
-- **Audio Visualiser:** `cava` 
+- **Colour Picker:** `colorpicker`
+- **Audio Visualiser:** `cava`
 - **Image Viewer/Setter:** `feh`
 - **Hotkey Daemon:** `sxhkd`
 - **Bar:** `Polybar`
