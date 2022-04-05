@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,drun,ssh";
+    modi: "run,drun";
     lines: 2;
     font: "DejaVu Sans Mono 12.3";
     icon-theme: "Papirus";
@@ -10,7 +10,6 @@ configuration{
     hide-scrollbar: true;
     display-drun: " Apps ";
     display-run: " Run ";
-    display-ssh: " SSH ";
     sidebar-mode: true;
 }
 

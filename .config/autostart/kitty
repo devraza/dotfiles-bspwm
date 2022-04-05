@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+echo "Welcome\nback,\nDevraza." | figlet -c -t | lolcat -h 0.2 -v 0.25
+
+$SHELL

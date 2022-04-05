@@ -26,21 +26,17 @@ super + p
 
 # Centered
 super + shift + {d,f}
-	feh --bg-center{ /home/devraza/Pictures/wallpapers/alt.jpg, /home/devraza/Pictures/wallpapers/shaded_landscape.png}
+	feh --bg-center{ /home/devraza/Pictures/wallpapers/shagiri.png, /home/devraza/Pictures/wallpapers/shaded_landscape.png}
 
-## --------- Playerctl (Spotify) ##
+## --------- Playerctl (mpd w/ ncmpcpp) ##
+
+# Previous/Next
+alt + {Left,Right}
+	mpc {prev,next}
 
 # Play/Pause
-super + shift + p
-	playerctl --player=spotify play-pause
-
-# Next song
-super + shift + o
-	playerctl --player=spotify next
-
-# Previous song
-super + shift + i
-	playerctl --player=spotify previous
+ctrl + {Left,Right}
+	mpc {play,pause}
 
 ## --------- Rofi ##
 

@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+sleep 1
+kitty gotop & disown
+
+sleep 1
+bspc desktop -f ^2
+sleep 1
+brave & disown
+
+sleep 1
+bspc desktop -f ^1
+#sleep 0.5
+#kitty /home/devraza/.config/autostart/neofetch & disown
+
+sleep 0.5
+kitty /home/devraza/.config/autostart/kitty & disown
+
+sleep 1
+bspc desktop -f ^6
+sleep 0.5
+mpc load Cyth & disown
+mpc play & disown
+
+sleep 1
+bspc dekstop -f ^1
