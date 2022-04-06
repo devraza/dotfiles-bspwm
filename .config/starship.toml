@@ -9,8 +9,8 @@ disabled = false
 
 # Change character to show in place of >
 [character]
-success_symbol = "[λ ](bold green)"
-error_symbol = "[λ ](bold red)"
+success_symbol = "[λ](bold green)"
+error_symbol = "[λ](bold red)"
 
 # Disable package module
 [package]
@@ -29,7 +29,7 @@ style = "bold red"
 [[battery.display]]
 threshold = 20
 style = "bold yellow"
-discharging_symbol = "💦"
+discharging_symbol = " "
 
 
 #-------- Git configuration ##

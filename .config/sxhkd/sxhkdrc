@@ -6,11 +6,7 @@ super + Return
 
 # Terminal (floating)
 super + shift + Return
-	kitty -f
-
-# Terminal (fullscreen)
-super + t
-	kitty -s	
+	bspc rule -a \* -o state=floating && $@ | kitty
 
 ## --------- Screenshot/Colorpicker ##
 
@@ -32,11 +28,11 @@ super + shift + {d,f}
 
 # Previous/Next
 alt + {Left,Right}
-	mpc {prev,next}
+	mpc --port=6500 {prev,next}
 
 # Play/Pause
 ctrl + {Left,Right}
-	mpc {play,pause}
+	mpc --port=6500 {pause,play}
 
 ## --------- Rofi ##
 
@@ -94,10 +90,6 @@ ctrl + shift + {q,r}
 super + {h,v,q}
 	bspc node -p {east,south,cancel}
 
-# Preselect the ratio
-super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
-
 # Fullscreen or Monocle
 super + f
     bspc node -t "~"fullscreen
@@ -110,14 +102,10 @@ super + ctrl + space
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
-# Change focus to the next window, including floating windows
-alt + {_,shift + }Tab
-	bspc node -f {next.local,prev.local}
-
 # Switch workspace
 super + ctrl + {Left,Right}
 	bspc desktop -f {prev.local,next.local}
 
 # Send focused window to another workspace
 super + {_,shift + }{1-8}
-	bspc {desktop -f,node -d} '^{1-8}'
+	bspc {desktop -f,node -d} '^{1-9}'

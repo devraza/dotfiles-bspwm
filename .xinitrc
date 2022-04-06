@@ -47,6 +47,7 @@ picom &
 dunst &
 polybar &
 copyq &
+mpd-notification -p 6500 &
 
 # Startup script
 zsh ~/.config/autostart/startup &

@@ -1,20 +1,15 @@
 # Path
 mpd_music_dir = "/home/devraza/Music"
 mpd_host = "localhost"
-mpd_port = "6600"
+mpd_port = "6500"
 
 # Playlist
 song_list_format = "$5%n$9$1▕ $1$4%a$9$1 - $1$7%t$1 $R$2[%b]$9"
 song_columns_list_format = "(8f)[blue]{l}  (36)[yellow]{a} (46)[green]{t|f} (14)[red]{b}"
 now_playing_prefix = "$b$1"
 now_playing_suffix = "$/b"
-playlist_display_mode = "classic" (classic/columns)
 autocenter_mode = "yes"
 centered_cursor = "yes"
 
-# Music Visualiser
-visualizer_data_source = "/tmp/mpd.fifo"
-visualizer_output_name = "my_fifo"
-visualizer_in_stereo = "yes"
-visualizer_type = "spectrum"
-visualizer_look = "+|"
+colors_enabled = "yes"
+playlist_display_mode = "columns"
