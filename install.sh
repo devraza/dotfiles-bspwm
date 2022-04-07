@@ -1,5 +1,9 @@
-sudo pacman -S zathura mpv dunst bspwm neofetch micro rofi sxhkd git
-yay -S spotify-adblock-git spicetify-cli manga-cli-git ani-cli polybar cava  
+sudo pacman -S xorg-xinit xorg zathura mpv dunst bspwm neofetch micro rofi sxhkd git ncmpcpp mpd
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd
+yay -S polybar cava  
 
 git clone https://github.com/devraza/dotfiles
 cd dotfiles
