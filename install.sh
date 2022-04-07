@@ -5,6 +5,9 @@ makepkg -si
 cd
 yay -S polybar cava  
 
+mkdir -p ~/Pictures/wallpapers
+git clone https://github.com/devraza/wallpapers Pictures/wallpapers
+
 git clone https://github.com/devraza/dotfiles
 cd dotfiles
 cp -r .config/* ~/.config/
