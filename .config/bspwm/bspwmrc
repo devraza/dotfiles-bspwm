@@ -3,7 +3,7 @@
 xrdb ~/.Xresources
 getcolors() {
 	FOREGROUND=#D9E0EE
-	BACKGROUND=#575268
+	BACKGROUND=#302D41
 	BLACK=#161320
 	RED=#F28FAD
 	GREEN=#ABE9B3
@@ -24,14 +24,14 @@ workspaces() {
 }
 workspaces
 
-bspc config border_width 4
-bspc config window_gap 36
+bspc config border_width 5
+bspc config window_gap 28
 bspc config split_ratio 0.50
 
 # Fixes resizing bug
-bspc config pointer_motion_interval 40
+bspc config pointer_motion_interval 16.67
 
-bspc config focused_border_color "$MAGENTA" 
+bspc config focused_border_color "$BLUE" 
 bspc config normal_border_color "$BACKGROUND"
 bspc config active_border_color "$BLUE"
 bspc config presel_feedback_color "$GREEN"
@@ -43,24 +43,9 @@ bspc config single_monocle false
 bspc config focus_follows_pointer true
 
 # Remove all rules
-bspc -rule -r *:*
-
-# 1 - terminal (kitty)
-bspc rule -a kitty desktop='^1' follow=on focus=on
-
-# 2 - browser (brave)
-bspc rule -a brave-browser desktop='^2' follow=on focus=on
-
-# 3 - code (micro)
-bspc rule -a vscodium desktop='^3' follow=on focus=on
-
-# 4 - discord
-bspc rule -a DiscordCanary desktop='^4' follow=on focus=on
+bspc rule -r *
 
 # 5 - media
 declare -a media=(mpv Zathura feh)
 for i in ${media[@]}; do
    bspc rule -a $i desktop='^5' follow=on focus=on; done
-
-# 6 > music
-bspc rule -a spotify desktop='^6' follow=on focus=on; done

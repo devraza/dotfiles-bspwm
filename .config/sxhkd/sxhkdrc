@@ -6,7 +6,11 @@ super + Return
 
 # Terminal (floating)
 super + shift + Return
-	bspc rule -a \* -o state=floating && $@ | kitty
+	bspc rule -a \* -o state=floating rectangle=1400x1000+0+0 && $@ | kitty
+
+# Terminal (rxfetch)
+super + ctrl + Return
+	bspc rule -a '*' -o state=floating rectangle=800x620+2150+100 | kitty /home/devraza/.config/autostart/rxfetch
 
 ## --------- Screenshot/Colorpicker ##
 
@@ -22,7 +26,7 @@ super + p
 
 # Centered
 super + shift + {d,f}
-	feh --bg-center{ /home/devraza/Pictures/wallpapers/shagiri.png, /home/devraza/Pictures/wallpapers/shaded_landscape.png}
+	feh --bg-fill{ /home/devraza/Pictures/wallpapers/cosmos.png, /home/devraza/Pictures/wallpapers/shaded_landscape.png}
 
 ## --------- Playerctl (mpd w/ ncmpcpp) ##
 
@@ -48,15 +52,11 @@ super + shift + space
 super + alt + space
 	rofi-bluetooth
 
-# Rofi SSH
-alt + shift + space
-	rofi -show ssh -dpi 200
-
 ## --------- Applications ##
 
 # Launch Apps
-super + ctrl + {b,z,d,m,g,c}
-	{brave,zathura,discord-canary,mpv,kitty gotop,kitty cava}
+super + ctrl + {b,z,d,g,c,n,a}
+	{brave,zathura,kitty gord,bspc rule -a '*' -o state=floating rectangle=1000x1600+40+350 | kitty gotop,bspc rule -a '*' -o state=floating rectangle=1800x300+1150+1650 | kitty cava, kitty ncmpcpp, zsh ~/.config/autostart/rice}
 
 ## --------- System ##
 

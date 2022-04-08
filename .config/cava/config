@@ -2,11 +2,11 @@
 
 gradient = 1
 
-gradient_color_1 = '#B5E8E0'
+gradient_color_1 = '#89DCEB'
 gradient_color_2 = '#89DCEB'
 gradient_color_3 = '#89DCEB'
-gradient_color_4 = '#DDB6F2'
-gradient_color_5 = '#DDB6F2'
-gradient_color_6 = '#F5C2E7'
-gradient_color_7 = '#F5C2E7'
-gradient_color_8 = '#F5E0DC'
+gradient_color_4 = '#89DCEB'
+gradient_color_5 = '#89DCEB'
+gradient_color_6 = '#89DCEB'
+gradient_color_7 = '#89DCEB'
+gradient_color_8 = '#89DCEB'
