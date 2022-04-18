@@ -1,11 +1,5 @@
 #!/bin/zsh
 
-sleep 1
+sleep 0.5
 mpc --port=6500 load Cyth
 mpc --port=6500 play
-
-sleep 1
-kitty gotop & disown
-
-sleep 1.5
-kitty /home/devraza/.config/autostart/kitty & disown

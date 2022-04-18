@@ -1,22 +1,22 @@
 [global]
-frame_color = "#96CDFB"
+frame_color = "#c4a7e7"
 separator_color = frame
-icon_name = Papirus
+corner_radius = 12
 
 [urgency_low]
 timeout = 2
-background = "#96CDFB"
-foreground = "#D9E0EE"
-frame_color = "#DDB6F2"
+background = "#191724"
+foreground = "#e0def4"
+frame_color = "#c4a7e7"
 
 [urgency_normal]
 timeout = 5
-background = "#1E1E2E"
-foreground = "#D9E0EE"
-frame_color = "#96CDFB"
+background = "#191724"
+foreground = "#e0def4"
+frame_color = "#c4a7e7"
 
 [urgency_critical]
 timeout = 0
-background = "#1E1E2E"
-foreground = "#D9E0EE"
-frame_color = "#F28FAD"
+background = "#191724"
+foreground = "#e0def4"
+frame_color = "#eb6f92"

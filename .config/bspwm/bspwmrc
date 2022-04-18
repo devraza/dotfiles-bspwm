@@ -2,16 +2,16 @@
 
 xrdb ~/.Xresources
 getcolors() {
-	FOREGROUND=#D9E0EE
-	BACKGROUND=#302D41
+	FOREGROUND=#e0def4
+	BACKGROUND=#2a273f
 	BLACK=#161320
-	RED=#F28FAD
-	GREEN=#ABE9B3
-	YELLOW=#FAE3B0
-	BLUE=#96CDFB
-	MAGENTA=#DDB6F2
-	CYAN=#B5E8E0
-	WHITE=#D9E0EE
+	RED=#eb6f92
+	GREEN=#3e8fb0
+	YELLOW=#f6c177
+	BLUE=#9ccfd8
+	MAGENTA=#c4a7e7
+	CYAN=#9ccfd8
+	WHITE=#e0def4
 }
 getcolors
 
@@ -24,14 +24,14 @@ workspaces() {
 }
 workspaces
 
-bspc config border_width 5
-bspc config window_gap 28
+bspc config border_width 0
+bspc config window_gap 32
 bspc config split_ratio 0.50
 
 # Fixes resizing bug
-bspc config pointer_motion_interval 16.67
+bspc config pointer_motion_interval 14
 
-bspc config focused_border_color "$BLUE" 
+bspc config focused_border_color "$MAGENTA" 
 bspc config normal_border_color "$BACKGROUND"
 bspc config active_border_color "$BLUE"
 bspc config presel_feedback_color "$GREEN"
@@ -44,6 +44,12 @@ bspc config focus_follows_pointer true
 
 # Remove all rules
 bspc rule -r *
+
+# 2 - Brave
+bspc rule -a Brave-browser desktop='^2'
+
+# 4 - Discord Canary
+bspc rule -a DiscordCanary desktop='^2'
 
 # 5 - media
 declare -a media=(mpv Zathura feh)

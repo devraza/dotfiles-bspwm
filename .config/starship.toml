@@ -4,7 +4,7 @@ add_newline = true
 # Show hostname
 [hostname]
 ssh_only = false
-format = "[$hostname](bold blue) "
+format = "[$hostname](bold green) "
 disabled = false
 
 # Change character to show in place of >
@@ -18,22 +18,6 @@ disabled = true
 
 [directory]
 style = "bold white"
-
-#-------- Battery  ##
-[battery]
-full_symbol = " "
-charging_symbol = "  "
-discharging_symbol = " "
-
-[[battery.display]]
-threshold = 10
-style = "bold red"
-
-[[battery.display]]
-threshold = 20
-style = "bold yellow"
-discharging_symbol = " "
-
 
 #-------- Git configuration ##
 

@@ -2,31 +2,27 @@
 
 # Terminal (kitty)
 super + Return
-	kitty
+	alacritty
 
 # Terminal (floating)
 super + shift + Return
-	bspc rule -a \* -o state=floating rectangle=1400x1000+0+0 && $@ | kitty
+	bspc rule -a \* -o state=floating rectangle=1400x1000+32+108 && $@ | alacritty
 
 # Terminal (rxfetch)
 super + ctrl + Return
-	bspc rule -a '*' -o state=floating rectangle=800x620+2150+100 | kitty /home/devraza/.config/autostart/rxfetch
+	bspc rule -a '*' -o state=floating rectangle=800x532+2170+108 | alacritty --hold -e rxfetch
 
 ## --------- Screenshot/Colorpicker ##
 
-# Select area, uses `imagemagick` and `copyq`
-super + shift + s
-	import ~/Pictures/screenshot.png && copyq write image/png - < ~/Pictures/screenshot.png && copyq select 0
+super + shift + A
+    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
+
+super + shift + S
+    scrot -s -f 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
 
 # Pick a colour from the screen, uses `colorpicker` (AUR) and `xclip`
 super + p
 	colorpicker --short --one-shot --preview | xclip -i -selection clipboard
-
-## --------- Wallpaper Switch ##
-
-# Centered
-super + shift + {d,f}
-	feh --bg-fill{ /home/devraza/Pictures/wallpapers/cosmos.png, /home/devraza/Pictures/wallpapers/shaded_landscape.png}
 
 ## --------- Playerctl (mpd w/ ncmpcpp) ##
 
@@ -55,14 +51,14 @@ super + alt + space
 ## --------- Applications ##
 
 # Launch Apps
-super + ctrl + {b,z,d,g,c,n,a}
-	{brave,zathura,kitty gord,bspc rule -a '*' -o state=floating rectangle=1000x1600+40+350 | kitty gotop,bspc rule -a '*' -o state=floating rectangle=1800x300+1150+1650 | kitty cava, kitty ncmpcpp, zsh ~/.config/autostart/rice}
+super + ctrl + {b,z,d,n,a}
+	{brave,zathura,discord-canary,bspc rule -a '*' -o state=floating rectangle=1000x1600+40+350 | alacritty -e ncmpcpp, aseprite}
 
 ## --------- System ##
 
 # Brighness control
-super + shift + {Left,Right}
-	xbacklight{ -10, +10}
+#super + shift + {Left,Right}
+#	xbacklight{ -10, +10}
 	
 # Volume control
 alt + shift + {Left,Right}
@@ -103,7 +99,7 @@ super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # Switch workspace
-super + ctrl + {Left,Right}
+super + {Left,Right}
 	bspc desktop -f {prev.local,next.local}
 
 # Send focused window to another workspace

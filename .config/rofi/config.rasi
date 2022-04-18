@@ -13,7 +13,7 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "catppuccin"
+@theme "rosepine"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;
@@ -23,7 +23,7 @@ element-text, element-icon , mode-switcher {
 window {
 	width: 1400px;
     height: 600px;
-    border: 4px;
+    border: 0px;
     border-color: @border-col;
     background-color: @bg-col;
 }
@@ -43,7 +43,7 @@ prompt {
     background-color: @blue;
     padding: 6px;
     text-color: @bg-col;
-    border-radius: 0px;
+    border-radius: 10px;
     margin: 20px 0px 0px 20px;
 }
 
