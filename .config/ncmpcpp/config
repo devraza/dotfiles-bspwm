@@ -1,15 +1,72 @@
 # Path
-mpd_music_dir = "/home/devraza/Music"
 mpd_host = "localhost"
 mpd_port = "6500"
 
-# Playlist
-song_list_format = "$5%n$9$1▕ $1$4%a$9$1 - $1$7%t$1 $R$2[%b]$9"
-song_columns_list_format = "(8f)[blue]{l}  (36)[yellow]{a} (46)[green]{t|f} (14)[red]{b}"
-now_playing_prefix = "$b$1"
-now_playing_suffix = "$/b"
-autocenter_mode = "yes"
-centered_cursor = "yes"
+# DIRECTORY
+# ---
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory  = ~/.config/ncmpcpp/lyrics
+mpd_music_dir     = ~/Music
 
-colors_enabled = "yes"
+# GENERAL
+# ---
+external_editor                  = nvim
+message_delay_time               = 1
+playlist_disable_highlight_delay = 2
+autocenter_mode                  = "yes"
+centered_cursor                  = "yes"
+ignore_leading_the               = "yes"
+allow_for_physical_item_deletion = "no"
+connected_message_on_startup = "yes"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+playlist_shorten_total_times = "yes"
 playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+user_interface = "classic"
+follow_now_playing_lyrics = "yes"
+display_bitrate = "no"
+startup_screen = "playlist"
+
+# VISUALIZER
+# ---
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "Visualizer"
+visualizer_in_stereo = "no"
+visualizer_type = "spectrum"
+visualizer_color = magenta
+visualizer_spectrum_smooth_look = yes
+
+# PROGRESS BAR
+# ---
+progressbar_look = "   "
+progressbar_color = "black"
+progressbar_elapsed_color = "yellow"
+
+# COLORS
+# ---
+main_window_color = "green"
+color1 = "white"
+color2 = "green"
+
+# UI VISIBILITY
+# ---
+header_visibility = "no"
+statusbar_visibility = "no"
+titles_visibility = "no"
+
+# UI APPEARANCE
+# ---
+now_playing_prefix = "$b$8$7 "
+now_playing_suffix = "  $/b$8"
+current_item_prefix = "$b$7$/b$3 "
+current_item_suffix = "  $8"
+song_status_format= "$7%t"
+song_list_format = "$8%a - %t$R  %l"
+song_columns_list_format = "(53)[white]{tr} (45)[green]{a}"
+song_library_format = {{%a - %t} (%b)}|{%f}
+song_window_title_format = "Music"

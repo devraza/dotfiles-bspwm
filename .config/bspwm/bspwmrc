@@ -3,7 +3,7 @@
 xrdb ~/.Xresources
 getcolors() {
 	FOREGROUND=#e0def4
-	BACKGROUND=#2a273f
+	BACKGROUND=#191724
 	BLACK=#161320
 	RED=#eb6f92
 	GREEN=#3e8fb0
@@ -18,7 +18,7 @@ getcolors
 workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
-		bspc monitor ${monitor} -n "$name" -d 'terminal' 'browser' 'micro' 'chat' 'media' 'I' 'II' 'III'
+		bspc monitor ${monitor} -n "$name" -d 'terminal' 'browser' 'helix' 'chat' 'media' 'I' 'II' 'III' 'IV'
 		let name++
 	done
 }
@@ -29,9 +29,9 @@ bspc config window_gap 32
 bspc config split_ratio 0.50
 
 # Fixes resizing bug
-bspc config pointer_motion_interval 14
+bspc config pointer_motion_interval 16
 
-bspc config focused_border_color "$MAGENTA" 
+bspc config focused_border_color "$CYAN" 
 bspc config normal_border_color "$BACKGROUND"
 bspc config active_border_color "$BLUE"
 bspc config presel_feedback_color "$GREEN"

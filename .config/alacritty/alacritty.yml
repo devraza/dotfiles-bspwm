@@ -47,5 +47,20 @@ cursor:
 
 window:
     padding:
-        x: 5
-        y: 1
+        x: 2
+        y: 0
+
+font:
+  normal:
+    family: Victor Mono
+    style: Regular
+  bold:
+    family: Victor Mono
+    style: Bold
+  italic:
+    family: Victor Mono
+    style: Italic
+  bold_italic:
+    family: Victor Mono
+    style: Bold Italic
+  size: 12

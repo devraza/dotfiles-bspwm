@@ -37,4 +37,3 @@ An [install script](https://github.com/devraza/dotfiles/blob/main/install.sh) is
 
 ### Screenshots
 ![Screenshot](https://github.com/devraza/dotfiles/blob/main/screenshots/screenshot.png)
-![Screenshot](https://github.com/devraza/dotfiles/blob/main/screenshots/screenshot-alt.png)

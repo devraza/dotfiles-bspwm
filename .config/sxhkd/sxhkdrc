@@ -7,18 +7,18 @@ super + Return
 # Terminal (floating)
 super + shift + Return
 	bspc rule -a \* -o state=floating rectangle=1400x1000+32+108 && $@ | alacritty
-
-# Terminal (rxfetch)
+	
+# Toipe
 super + ctrl + Return
-	bspc rule -a '*' -o state=floating rectangle=800x532+2170+108 | alacritty --hold -e rxfetch
+	alacritty -e toipe
 
 ## --------- Screenshot/Colorpicker ##
 
 super + shift + A
-    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
+    scrot 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/`ls -1 -t ~/Pictures/Screenshots | head -1`'
 
 super + shift + S
-    scrot -s -f 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/screenshots && mv $f ~/screenshots && xclip -selection clipboard -t image/png -i ~/screenshots/`ls -1 -t ~/screenshots | head -1`'
+    scrot -s -f 'screenshot_%Y%m%d_%H%M%S.png' -e 'mv $f ~/Pictures/Screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/Screenshots/`ls -1 -t ~/Pictures/Screenshots | head -1`'
 
 # Pick a colour from the screen, uses `colorpicker` (AUR) and `xclip`
 super + p
@@ -34,15 +34,20 @@ alt + {Left,Right}
 ctrl + {Left,Right}
 	mpc --port=6500 {pause,play}
 
+## --------- Resolution Changing (for higher fps) ##
+
+super + {e,w}
+	xrandr --output eDP-1 --mode {1920x1080,3000x2000} | picom --experimental-backends &
+
 ## --------- Rofi ##
 
 # Rofi App Launcher
 super + space
-	rofi -show drun -dpi 200
+	rofi -show drun -dpi 192
 
 # Rofi Command Runner
 super + shift + space
-	rofi -show run -dpi 200
+	rofi -show run -dpi 192
 
 # Rofi Bluetooth Menu
 super + alt + space
@@ -51,28 +56,28 @@ super + alt + space
 ## --------- Applications ##
 
 # Launch Apps
-super + ctrl + {b,z,d,n,a}
-	{brave,zathura,discord-canary,bspc rule -a '*' -o state=floating rectangle=1000x1600+40+350 | alacritty -e ncmpcpp, aseprite}
+super + ctrl + {b,d,n,h,a}
+	{brave,discord-canary,alacritty -e ncmpcpp,alacritty -e helix, aseprite}
 
 ## --------- System ##
-
-# Brighness control
-#super + shift + {Left,Right}
-#	xbacklight{ -10, +10}
 	
 # Volume control
 alt + shift + {Left,Right}
-	pulseaudio-ctl{ down 10, up 10}
+	pulseaudio-ctl{ down 5, up 5}
 
 ## --------- bspwm ##
+
+# Mouse cursor speed
+super + a
+	xinput --set-prop 14 'libinput Accel Speed' -0.85 | xinput --set-prop 15 'libinput Accel Speed' -0.85
+
+# Hide/unhide windows
+super + shift + p
+	~/.config/scripts/winhide
 
 # Close app
 super + {_,shift + }c
 	bspc node -{c,k}
-
-# Kill window
-super + ctrl + c
-    xkill
 
 # Reload keybindings
 super + Escape
@@ -98,10 +103,17 @@ super + ctrl + space
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
+# expand/contract a window 
+alt + control + shift + {Left,Down,Up,Right}
+  bspc node -z {left -20 0 || bspc node -z right -20 0, \
+                bottom 0 20 || bspc node -z top 0 20,\
+				top 0 -20 || bspc node -z bottom 0 -20,\
+				right 20 0 || bspc node -z left 20 0}
+
 # Switch workspace
-super + {Left,Right}
+shift + {Left,Right}
 	bspc desktop -f {prev.local,next.local}
 
-# Send focused window to another workspace
-super + {_,shift + }{1-8}
+# Send focused window to another workspace or switch workspace
+super + {_,shift + }{1-9}
 	bspc {desktop -f,node -d} '^{1-9}'

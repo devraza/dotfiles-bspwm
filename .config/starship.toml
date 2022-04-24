@@ -19,6 +19,21 @@ disabled = true
 [directory]
 style = "bold white"
 
+#-------- Battery  ##
+[battery]
+full_symbol = "  "
+charging_symbol = "  "
+discharging_symbol = "  "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 20
+style = "bold yellow"
+discharging_symbol = " "
+
 #-------- Git configuration ##
 
 [git_branch]

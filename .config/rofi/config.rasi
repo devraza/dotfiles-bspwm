@@ -1,15 +1,15 @@
 configuration{
     modi: "run,drun";
     lines: 2;
-    font: "DejaVu Sans Mono 12.3";
-    icon-theme: "Papirus";
-    terminal: "kitty";
+    font: "Victor Mono 12.3";
+    icon-theme: "oomox-rose-pine";
+    terminal: "alacritty";
     drun-display-format: " {name} ";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: " Apps ";
-    display-run: " Run ";
+    display-drun: "  ";
+    display-run: "  ";
     sidebar-mode: true;
 }
 
@@ -40,9 +40,9 @@ inputbar {
 }
 
 prompt {
-    background-color: @blue;
+    background-color: @bg-col;
     padding: 6px;
-    text-color: @bg-col;
+    text-color: @blue;
     border-radius: 10px;
     margin: 20px 0px 0px 20px;
 }
@@ -54,7 +54,7 @@ textbox-prompt-colon {
 
 entry {
     padding: 6px;
-    margin: 20px 0px 0px 14px;
+    margin: 20px 0px 0px 0px;
     text-color: @fg-col;
     background-color: @bg-col;
 }
@@ -63,7 +63,7 @@ listview {
     border: 0px 0px 0px;
     padding: 6px 0px 0px;
     margin: 12px 0px 0px 0px;
-    columns: 1;
+    columns: 2;
     background-color: @bg-col;
 }
 

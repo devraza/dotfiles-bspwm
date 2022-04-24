@@ -1,8 +1,0 @@
-#!/bin/zsh
-
-bspc rule -a '*' -o state=floating rectangle=1000x1600+40+350 | kitty gotop & disown
-sleep 0.5
-bspc rule -a '*' -o state=floating rectangle=1800x300+1150+1650 | kitty cava & disown
-sleep 0.5
-bspc rule -a '*' -o state=floating rectangle=800x620+2150+100 | kitty /home/devraza/.config/autostart/rxfetch
-

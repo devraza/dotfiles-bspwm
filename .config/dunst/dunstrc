@@ -1,22 +1,26 @@
 [global]
-frame_color = "#c4a7e7"
+frame_color = "#232136"
 separator_color = frame
-corner_radius = 12
+font = Victor Mono 10
+format = "<b>%s</b>\n%b"
+ellipsize = middle
+icon_path = /usr/share/icons/rose-pine-icons/48x48/status:/usr/share/icons/rose-pine-icons/48x48/devices
+min_icon_size = 20
+default_icon = /home/devraza/.config/dunst/scripts/bell.svg
 
 [urgency_low]
 timeout = 2
-background = "#191724"
+background = "#232136"
 foreground = "#e0def4"
-frame_color = "#c4a7e7"
 
 [urgency_normal]
 timeout = 5
-background = "#191724"
+background = "#232136"
 foreground = "#e0def4"
-frame_color = "#c4a7e7"
 
 [urgency_critical]
 timeout = 0
-background = "#191724"
+background = "#232136"
 foreground = "#e0def4"
 frame_color = "#eb6f92"
+default_icon = /home/devraza/.config/dunst/scripts/bell.svg

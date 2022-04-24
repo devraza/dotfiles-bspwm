@@ -32,25 +32,28 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Set keyboard map to 'gb'
-setxkbmap gb
+# Bluetooth
+rfkill unblock 0
+bluetoothctl power on
+
+# Set wallpaper
+feh --bg-fill ~/Pictures/wallpapers/evening-sky.png &
+
+# Launch polybar early
+polybar &
+
+# Apps
+dunst &
+mpd-discord-rpc &
+sxhkd &
+picom --experimental-backends &
+conky -c ~/.config/conky/config.conf &
 
 # Set cursor
 xsetroot -cursor_name left_ptr
 
-# Set wallpaper
-feh --bg-center ~/Pictures/wallpapers/shaded_landscape.png
-
-# Launch applications
-sxhkd &
-picom &
-dunst &
-polybar &
-copyq &
-mpd-notification -p 6500 &
-
 # Startup script
-zsh ~/.config/autostart/startup &
+zsh ~/.config/scripts/startup &
 
 # Start bspwm
 exec bspwm
