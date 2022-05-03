@@ -1,18 +1,18 @@
-!!! Double dpi (for my 3000x2000 display)
+!!! xst Configuration
+st.font: Victor Mono:pixelsize=30:antialias=true:autohint=true;
+st.borderpx: 4
+st.cursorshape: 6
+st.cursorthickness: 2
 
-Xft.dpi: 200
-
-!!! Improve font rendering
-
-Xft.autohint: 0
+!!! HiDPI & Font Rendering
+Xft.dpi:	192
 Xft.antialias: 1
-Xft.hinting: true
-Xft.hintstyle: hintslight
+Xft.hinting: 1
 Xft.rgba: rgb
+Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-!!! Colour scheme (catppuccin)
-
+! Background/Foreground
 *background: #1E1E2E
 *foreground: #D9E0EE
 
@@ -36,7 +36,7 @@ Xft.lcdfilter: lcddefault
 *color4: #96CDFB
 *color12: #96CDFB
 
-! Mauve
+! Maguve
 *color5: #DDB6F2
 *color13: #DDB6F2
 
@@ -44,6 +44,6 @@ Xft.lcdfilter: lcddefault
 *color6: #F5C2E7
 *color14: #F5C2E7
 
-! White(s)
+! Whites
 *color7: #C3BAC6
 *color15: #D9E0EE

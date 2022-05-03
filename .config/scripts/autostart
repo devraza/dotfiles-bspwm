@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+feh --bg-scale ~/Pictures/wallpaper.png
+polybar &
+mpd
+dunst &
+sxhkd &
+picom &
+pulseaudio --daemonize=no --exit-idle-time=-1 &
+
+mpc load Cyth
+mpc play

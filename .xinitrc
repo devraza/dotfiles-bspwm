@@ -32,28 +32,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-# Bluetooth
-rfkill unblock 0
-bluetoothctl power on
+# Autostart script
+zsh ~/.config/scripts/autostart &
 
-# Set wallpaper
-feh --bg-fill ~/Pictures/wallpapers/evening-sky.png &
-
-# Launch polybar early
-polybar &
-
-# Apps
-dunst &
-mpd-discord-rpc &
-sxhkd &
-picom --experimental-backends &
-conky -c ~/.config/conky/config.conf &
+setxkbmap gb
 
 # Set cursor
 xsetroot -cursor_name left_ptr
 
-# Startup script
-zsh ~/.config/scripts/startup &
-
 # Start bspwm
-exec bspwm
+exec bspwm -c /home/devraza/.config/bspwm/bspwmrc

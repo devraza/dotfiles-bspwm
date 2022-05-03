@@ -4,7 +4,7 @@ add_newline = true
 # Show hostname
 [hostname]
 ssh_only = false
-format = "[$hostname](bold green) "
+format = "[$hostname](bold purple) "
 disabled = false
 
 # Change character to show in place of >

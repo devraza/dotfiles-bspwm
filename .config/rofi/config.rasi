@@ -8,12 +8,12 @@ configuration{
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
-    display-drun: "  ";
-    display-run: "  ";
+    display-drun: "  Apps ";
+    display-run: "  Run ";
     sidebar-mode: true;
 }
 
-@theme "rosepine"
+@theme "catppuccin"
 
 element-text, element-icon , mode-switcher {
     background-color: inherit;

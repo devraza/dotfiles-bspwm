@@ -1,39 +1,38 @@
-#!/usr/bin/zsh
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
 
 xrdb ~/.Xresources
 getcolors() {
-	FOREGROUND=#e0def4
-	BACKGROUND=#191724
-	BLACK=#161320
-	RED=#eb6f92
-	GREEN=#3e8fb0
-	YELLOW=#f6c177
-	BLUE=#9ccfd8
-	MAGENTA=#c4a7e7
-	CYAN=#9ccfd8
-	WHITE=#e0def4
+	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+	BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+	RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+	GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+	YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+	BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+	MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+	CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
 }
 getcolors
 
 workspaces() {
 	name=1
 	for monitor in `bspc query -M`; do
-		bspc monitor ${monitor} -n "$name" -d 'terminal' 'browser' 'helix' 'chat' 'media' 'I' 'II' 'III' 'IV'
+		bspc monitor ${monitor} -n "$name" -d 'term' 'web' 'helix' 'discord' 'media'
 		let name++
 	done
 }
 workspaces
 
 bspc config border_width 0
-bspc config window_gap 32
+bspc config window_gap 20
 bspc config split_ratio 0.50
 
-# Fixes resizing bug
-bspc config pointer_motion_interval 16
-
-bspc config focused_border_color "$CYAN" 
+bspc config focused_border_color "$MAGENTA" 
 bspc config normal_border_color "$BACKGROUND"
-bspc config active_border_color "$BLUE"
+bspc config active_border_color "$MAGENTA"
 bspc config presel_feedback_color "$GREEN"
 
 bspc config borderless_monocle true
@@ -42,16 +41,8 @@ bspc config paddingless_monocle true
 bspc config single_monocle false
 bspc config focus_follows_pointer true
 
-# Remove all rules
-bspc rule -r *
+bspc rule -a Brave-browser  desktop='^2'
 
-# 2 - Brave
-bspc rule -a Brave-browser desktop='^2'
-
-# 4 - Discord Canary
-bspc rule -a DiscordCanary desktop='^2'
-
-# 5 - media
 declare -a media=(mpv Zathura feh)
 for i in ${media[@]}; do
    bspc rule -a $i desktop='^5' follow=on focus=on; done

@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-sleep 0.5
-mpc --port=6500 load Cyth
-mpc --port=6500 play

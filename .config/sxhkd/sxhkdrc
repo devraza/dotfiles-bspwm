@@ -2,15 +2,11 @@
 
 # Terminal (kitty)
 super + Return
-	alacritty
+	xst
 
 # Terminal (floating)
 super + shift + Return
-	bspc rule -a \* -o state=floating rectangle=1400x1000+32+108 && $@ | alacritty
-	
-# Toipe
-super + ctrl + Return
-	alacritty -e toipe
+	bspc rule -a \* -o state=floating rectangle=1400x1000+32+108 && $@ | xst
 
 ## --------- Screenshot/Colorpicker ##
 
@@ -28,11 +24,11 @@ super + p
 
 # Previous/Next
 alt + {Left,Right}
-	mpc --port=6500 {prev,next}
+	mpc {prev,next}
 
 # Play/Pause
 ctrl + {Left,Right}
-	mpc --port=6500 {pause,play}
+	mpc {pause,play}
 
 ## --------- Resolution Changing (for higher fps) ##
 
@@ -57,7 +53,7 @@ super + alt + space
 
 # Launch Apps
 super + ctrl + {b,d,n,h,a}
-	{brave,discord-canary,alacritty -e ncmpcpp,alacritty -e helix, aseprite}
+	{brave-browser-stable,discord-canary,xst -e ncmpcpp,xst -e helix, aseprite}
 
 ## --------- System ##
 	

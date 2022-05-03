@@ -1,1 +1,4 @@
-theme = "rose_pine"
+theme = "catppuccin"
+
+[editor]
+true-color = true

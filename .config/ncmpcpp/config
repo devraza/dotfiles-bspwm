@@ -1,16 +1,14 @@
 # Path
 mpd_host = "localhost"
-mpd_port = "6500"
+mpd_port = "6600"
 
-# DIRECTORY
-# ---
+# Directory
 ncmpcpp_directory = ~/.config/ncmpcpp
 lyrics_directory  = ~/.config/ncmpcpp/lyrics
 mpd_music_dir     = ~/Music
 
-# GENERAL
-# ---
-external_editor                  = nvim
+# General
+external_editor                  = helix
 message_delay_time               = 1
 playlist_disable_highlight_delay = 2
 autocenter_mode                  = "yes"
@@ -32,41 +30,28 @@ follow_now_playing_lyrics = "yes"
 display_bitrate = "no"
 startup_screen = "playlist"
 
-# VISUALIZER
-# ---
-visualizer_data_source = "/tmp/mpd.fifo"
-visualizer_output_name = "Visualizer"
-visualizer_in_stereo = "no"
-visualizer_type = "spectrum"
-visualizer_color = magenta
-visualizer_spectrum_smooth_look = yes
-
-# PROGRESS BAR
-# ---
+# Progress Bar
 progressbar_look = "   "
 progressbar_color = "black"
 progressbar_elapsed_color = "yellow"
 
-# COLORS
-# ---
-main_window_color = "green"
+# Colours
+main_window_color = "cyan"
 color1 = "white"
-color2 = "green"
+color2 = "cyan"
 
-# UI VISIBILITY
-# ---
+# UI Visibility
 header_visibility = "no"
 statusbar_visibility = "no"
 titles_visibility = "no"
 
-# UI APPEARANCE
-# ---
-now_playing_prefix = "$b$8$7 "
+# UI Appearance
+now_playing_prefix = "$b$8>$7 "
 now_playing_suffix = "  $/b$8"
-current_item_prefix = "$b$7$/b$3 "
+current_item_prefix = "$b$7>$/b$3 "
 current_item_suffix = "  $8"
 song_status_format= "$7%t"
 song_list_format = "$8%a - %t$R  %l"
-song_columns_list_format = "(53)[white]{tr} (45)[green]{a}"
+song_columns_list_format = "(53)[white]{tr} (45)[magenta]{a}"
 song_library_format = {{%a - %t} (%b)}|{%f}
 song_window_title_format = "Music"
