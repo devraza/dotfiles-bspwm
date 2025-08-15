@@ -29,7 +29,5 @@ The `scrot` package is used for screenshots, which are then copied to my system 
 
 **The [catppuccin](https://github.com/catppuccin/catppuccin) colour scheme is used wherever it can be used, with some personal customisations.**
 
-**My wallpapers can be found [here](https://github.com/devraza/wallpapers)**
-
 ### Screenshots
 ![Screenshot](https://github.com/devraza/dotfiles/blob/main/screenshots/screenshot.png)
